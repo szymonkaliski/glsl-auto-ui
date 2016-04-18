@@ -4,6 +4,8 @@
 
 Automatic DAT.GUI generation from GLSL uniforms.
 
+<p align="center"><img src="docs/screenshot.png" alt="screenshot" style="max-width:100%;"></p>
+
 Just name your UI uniforms starting with "ui": "uiColorModifier", etc.
 Currently only supports `float`, `vec2`, `vec3`, `vec4`.
 
