@@ -1,6 +1,6 @@
 {
   "name": "glsl-auto-ui",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Automatic DAT.GUI generation from GLSL uniforms",
   "author": "Szymon Kaliski <contact@treesmovethemost.com>",
   "license": "MIT",
