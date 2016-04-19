@@ -23,7 +23,7 @@ const findUniforms = (ast) => {
 };
 
 // generates UI from shader string
-const generateUI = (gui, shader) => {
+const generateUI = (gui, shader, { remember } = { remember: true }) => {
   const uniforms = findUniforms(parseTokens(tokenString(shader)));
 
   const paramsStruct = uniforms.map(({ key, type }) => {
@@ -42,6 +42,10 @@ const generateUI = (gui, shader) => {
 
   // output params
   let outParams = flatten(paramsStruct).reduce((memo, value) => Object.assign(memo, value), {});
+
+  // remember state - especially helpful with localStorage set to true
+  // NOT: this HAS to be called before any gui.add!
+  if (remember) { gui.remember(outParams); }
 
   // add folders to DAT.GUI
   paramsStruct.forEach((params, i) => {
